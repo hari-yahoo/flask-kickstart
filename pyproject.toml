@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flask-kickstart"
+version = "0.1"
+dependencies = [
+  "flask"
+]
+requires-python = ">=3.8"
+authors = [
+  {name = "Harikumar G", email = "hgokulam@yahoo.com"}
+ 
+]
+maintainers = [
+  {name = "Harikumar G", email = "hgokulam@yahoo.com"}
+]
+description = "Flask application scaffolding tool"
+readme = "README.rst"
+license = {file = "LICENSE.txt"}
+keywords = ["flask", "blueprint", "sqlite", "scaffold", "generate", "webdevelopment"]
+classifiers = [
+  "Development Status :: Beta",
+  "Programming Language :: Python"
+]
+[tool.setuptools.packages.find]
+# All the following settings are optional:
+where = ["src"]  # ["."] by default
+include = ["mypackage*"]  # ["*"] by default
+exclude = ["mypackage.tests*"]  # empty by default
+namespaces = false  # true by default
