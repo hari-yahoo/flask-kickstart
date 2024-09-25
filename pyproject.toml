@@ -26,7 +26,10 @@ classifiers = [
 ]
 [tool.setuptools.packages.find]
 # All the following settings are optional:
-where = ["src"]  # ["."] by default
-include = ["mypackage*"]  # ["*"] by default
-exclude = ["mypackage.tests*"]  # empty by default
+where = ["."]  # ["."] by default
+include = ["kickstart*"]  # ["*"] by default
+exclude = []  # empty by default
 namespaces = false  # true by default
+
+[project_scripts]
+flask_ks = "kickstart.maths:show"
