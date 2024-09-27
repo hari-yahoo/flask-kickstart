@@ -1,0 +1,7 @@
+from flask import Flask, Blueprint
+
+
+bp = Blueprint('{{ name }}', __name__)
+@bp.route('/')
+def home():
+    return "Home"
