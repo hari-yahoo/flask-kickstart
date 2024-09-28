@@ -35,5 +35,11 @@ classifiers = [
 [project.scripts]
 flask_kickstart = "kickstart:main"
 
-[tool.setuptools]
-package-data = {"kickstart" = ["*.dat"]}
+# [tool.setuptools]
+# package-data = {"kickstart" = ["*.dat"]}
+
+[tool.setuptools.packages.find]
+where = ["src"] 
+
+[tool.setuptools.package-data]
+"*" = ["*.*"] 

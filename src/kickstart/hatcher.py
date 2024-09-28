@@ -1,9 +1,11 @@
 import os
 import errno
-from jinja2 import Environment, PackageLoader, select_autoescape
+from jinja2 import FileSystemLoader, Environment, PackageLoader, select_autoescape
 
+#templateLoader = FileSystemLoader(searchpath="./kickstart/templates")
+templateLoader = PackageLoader("kickstart")
 ENV = Environment(
-    loader=PackageLoader("kickstart"),
+    loader= templateLoader,
     autoescape=select_autoescape()
 )
 
