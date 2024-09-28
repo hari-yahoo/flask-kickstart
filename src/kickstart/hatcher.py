@@ -11,28 +11,24 @@ ENV = Environment(
 
 
 class Hatcher:
-    def __init__(self, project_name):
-        print(project_name)
-        self.projectName = project_name
-        print(self.projectName)
+    def __init__(self, folder):
+        #self.projectName = project_name
+        self.folder = folder
+        print (self.folder)
     
     def createFolder(self, folderName, mode=755):
-       
         try:
-            
             os.makedirs(folderName, mode, True)
         except OSError as e:
             if e.errno != errno.EEXIST or not os.path.isdir(folderName):
                 raise
 
     def _buildPath(self, path):
-        fullpath = self.projectName +'/' + path
+        fullpath = path
         return os.sep.join (fullpath.split('/'))
     
     def makeFolder(self, folder, mode=755):
-        
         path = self._buildPath(folder)
-
         try:
             os.makedirs(path, mode, True)
         except OSError as e:
@@ -40,12 +36,12 @@ class Hatcher:
                 raise
 
     def createPackage(self, name):
-        folder = os.path.join(self.projectName, name)
-        self.createFolder(folder)
-        with open(os.path.join(folder, '__init__.py'), 'a') as f:
+        
+        self.makeFolder(self.folder)
+        with open(self._buildPath(self.folder + '/__init__.py'), 'a') as f:
             f.write("")
 
-        with open(os.path.join(folder, 'routes.py'), 'a') as f:
+        with open(self._buildPath(self.folder +'/routes.py'), 'a') as f:
             f.write("")
 
     def generateFile(self, template_jnj, output_folder, output_file, **variables):
