@@ -11,6 +11,6 @@ class Blueprint(Hatcher):
       
 
     def generate(self):
-        self.createPackage(self.folder)
-        self.generateFile('routes.tmpl', self.folder, 'routes.py', name=self.name)
-        
+        self.createPackage(create_init=False)
+        self.generateFile('bp_init.tmpl', self.folder, '__init__.py', bp_name=self.name)
+        self.generateFile('routes.tmpl', self.folder, 'routes.py', bp_name=self.name)

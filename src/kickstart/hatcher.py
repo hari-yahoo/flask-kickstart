@@ -16,7 +16,7 @@ class Hatcher:
         self.folder = folder
         print (self.folder)
     
-    def createFolder(self, folderName, mode=755):
+    def createFolder_old(self, folderName, mode=755):
         try:
             os.makedirs(folderName, mode, True)
         except OSError as e:
@@ -35,15 +35,14 @@ class Hatcher:
             if e.errno!= errno.EEXIST or not os.path.isdir(path):
                 raise
 
-    def createPackage(self, name):
+    def createPackage(self, create_init: True):
         
         self.makeFolder(self.folder)
-        with open(self._buildPath(self.folder + '/__init__.py'), 'a') as f:
-            f.write("")
+        if (create_init is True):
+            with open(self._buildPath(self.folder + '/__init__.py'), 'a') as f:
+                f.write("")
 
-        with open(self._buildPath(self.folder +'/routes.py'), 'a') as f:
-            f.write("")
-
+        
     def generateFile(self, template_jnj, output_folder, output_file, **variables):
         file_path = self._buildPath(output_folder + '/' +output_file)
         template = ENV.get_template(template_jnj)

@@ -13,13 +13,13 @@ class Project(Hatcher):
         self.description = description
         
         self.application = Application( self.folder)
-        self.application.addBlueprint('main')
+        #self.application.addBlueprint('main')
 
     def generate(self):
         print('Generating code for ' + self.name )
         folderName = self.folder
       
-        self.createFolder(folderName)
+        self.makeFolder(folderName)
         self.generateFile('readme.tmpl', self.folder, 'README.md', projectName=self.name, description=self.description, author=self.author)
         
         self.application.generate()
