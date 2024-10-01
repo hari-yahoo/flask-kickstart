@@ -32,6 +32,16 @@ classifiers = [
   "Programming Language :: Python :: 3 :: Only",
 ]
 
+
+dependencies = [
+  "jinja2",
+]
+
+[project.urls]
+Homepage = "https://hari-yahoo.github.io/flask-kickstart/"
+Repository = "https://github.com/hari-yahoo/flask-kickstart.git"
+Issues = "https://github.com/hari-yahoo/flask-kickstart/issues"
+
 [project.scripts]
 flask_kickstart = "kickstart:main"
 
