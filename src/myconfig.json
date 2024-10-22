@@ -1,0 +1,9 @@
+{
+    "project": {
+      "name": "NewAppGenerated",
+      "author": "Harikumar G",
+      "description": "Generated using Kickstarter",  
+      "blueprints": ["main", "auth"]
+    },
+    "outputFolder" : "generated"
+  }

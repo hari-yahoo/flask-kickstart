@@ -21,7 +21,7 @@ class Project(Hatcher):
       
         self.makeFolder(folderName)
         self.generateFile('readme.tmpl', self.folder, 'README.md', projectName=self.name, description=self.description, author=self.author)
-        
+        self.generateFile('run.tmpl', self.folder, 'run.py')
         self.application.generate()
     def setOutputFolder(self, folder):
         self._outputFolder = folder

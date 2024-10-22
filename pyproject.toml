@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "flask-kickstart" 
-version = "0.1"  
+version = "0.2"  
 description = "Flask application scaffolding tool"
 readme = "README.md"
 requires-python = ">=3.8"

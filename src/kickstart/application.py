@@ -17,6 +17,7 @@ class Application(Hatcher):
         self.makeFolder(self.folder + '/static')
         self.makeFolder(self.folder + '/templates')
         self.generateFile('app.tmpl', self.folder, '__init__.py', blueprints=self.blueprints)
+        self.generateFile('config.tmpl', self.folder, 'config.py')
         self.generateFile('base.tmpl', self.folder + '/templates', 'base.html', projectName="projectName")
         self.generateFile('index.tmpl', self.folder + '/templates', 'index.html', projectName="projectName")
        
